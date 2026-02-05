@@ -1,0 +1,54 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:29655",
+      "sslPort": 44316
+    }
+  },
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5102",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7139;http://localhost:5102",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1433;Database=EmployeeDb;User Id=sa;Password=Passwordchallenge720;TrustServerCertificate=True;"
+  },
+  "Jwt": {
+    "Key": "CHANGE_THIS_TO_A_LONG_RANDOM_SECRET_32+_CHARS",
+    "Issuer": "EmployeeService",
+    "Audience": "EmployeeServiceClient",
+    "ExpiresMinutes": 60
+  }
+
+
+
+
+}

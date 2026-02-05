@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a586db98-6cec-4efa-b9b6-a1aac50b0159" name="wendy@TUTU 2026-02-05 11:14:51" runUser="TUTU\wendy" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-02-05T11:14:51.7582577-03:00" queuing="2026-02-05T11:14:51.7582582-03:00" start="2026-02-05T11:14:49.9335263-03:00" finish="2026-02-05T11:14:51.7979409-03:00" />
+  <TestSettings name="default" id="0a5e55e7-c000-4cdb-a8f8-009373e78acc">
+    <Deployment runDeploymentRoot="wendy_TUTU_2026-02-05_11_14_51" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="901bdec5-e506-4fc4-b20d-59bd4296e954" testId="1181108a-9116-a0c3-85c8-5e1cc3b79e59" testName="EmployeeService.Tests.ApiTests.Login_WithValidCredentials_ReturnsToken" computerName="TUTU" duration="00:00:00.0288627" startTime="2026-02-05T11:14:51.5528201-03:00" endTime="2026-02-05T11:14:51.5528202-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="901bdec5-e506-4fc4-b20d-59bd4296e954">
+      <Output>
+        <StdOut>TEST: Login_WithValidCredentials_ReturnsToken&#xD;
+EXPECTS: Return 200 OK and valid JWT</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2edd097d-0643-4177-9fb6-5ccb00cc9ef8" testId="44b13f1c-fcb0-16ed-2e2c-b7896352cecb" testName="EmployeeService.Tests.ApiTests.CreateEmployee_Minor_Returns400" computerName="TUTU" duration="00:00:00.0230505" startTime="2026-02-05T11:14:51.5758990-03:00" endTime="2026-02-05T11:14:51.5758992-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2edd097d-0643-4177-9fb6-5ccb00cc9ef8">
+      <Output>
+        <StdOut>TEST: CreateEmployee_Minor_Returns400&#xD;
+EXPECTS: Reject employees under 18 (minor)&#xD;
+Helper: LoginAndGetToken → login válido y extracción del JWT</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0f77665f-e163-46c0-95f1-a6cdfe7803b6" testId="16cfd299-d47f-ee63-f52d-7a0a739b9ec9" testName="EmployeeService.Tests.ApiTests.CreateEmployee_WithLessThanTwoPhones_Returns400" computerName="TUTU" duration="00:00:00.0319269" startTime="2026-02-05T11:14:51.7064451-03:00" endTime="2026-02-05T11:14:51.7064452-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f77665f-e163-46c0-95f1-a6cdfe7803b6">
+      <Output>
+        <StdOut>TEST: CreateEmployee_WithLessThanTwoPhones_Returns400&#xD;
+EXPECTS: Return 400 BadRequest when employee has less than two phones&#xD;
+Helper: LoginAndGetToken → login válido y extracción del JWT</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7aa6e401-be0d-416b-81b0-e5cc33388b8f" testId="047b2988-374d-6ff3-3c85-556330044d3d" testName="EmployeeService.Tests.ApiTests.CreateEmployee_DuplicateEmail_Returns409" computerName="TUTU" duration="00:00:00.0273685" startTime="2026-02-05T11:14:51.6233317-03:00" endTime="2026-02-05T11:14:51.6233319-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7aa6e401-be0d-416b-81b0-e5cc33388b8f">
+      <Output>
+        <StdOut>TEST: CreateEmployee_DuplicateEmail_Returns409&#xD;
+EXPECTS: Return 409 Conflict when email already exists&#xD;
+Helper: LoginAndGetToken → login válido y extracción del JWT</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6604fb96-b58a-414e-a68e-d962515998e0" testId="d06e04af-945b-d916-0001-d18738111de5" testName="EmployeeService.Tests.ApiTests.CreateEmployee_ManagerHasLowerRole_Returns400" computerName="TUTU" duration="00:00:00.0311824" startTime="2026-02-05T11:14:51.6546532-03:00" endTime="2026-02-05T11:14:51.6546534-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6604fb96-b58a-414e-a68e-d962515998e0">
+      <Output>
+        <StdOut>TEST: CreateEmployee_ManagerHasLowerRole_Returns400&#xD;
+EXPECTS: Returns 400 when manager role is lower than the new employee role&#xD;
+SETUP: Create a low-role manager first, then create a higher-role employee using that manager&#xD;
+Helper: LoginAndGetToken → login válido y extracción del JWT</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a71cad94-096a-47ef-9e2b-39d557b7b3cd" testId="9bb9451a-c07e-3946-8057-9c42bd8c9126" testName="EmployeeService.Tests.ApiTests.Login_WithInvalidCredentials_Returns401" computerName="TUTU" duration="00:00:00.0164543" startTime="2026-02-05T11:14:51.6743608-03:00" endTime="2026-02-05T11:14:51.6743609-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a71cad94-096a-47ef-9e2b-39d557b7b3cd">
+      <Output>
+        <StdOut>TEST: Login_WithInvalidCredentials_Returns401&#xD;
+EXPECTS: Return 401 if wrong password</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4252670a-a4c1-4596-9203-60efdd46e18c" testId="3b0cbbf9-e50e-f93d-9d6f-c1ba1677e3c3" testName="EmployeeService.Tests.ApiTests.CreateEmployee_WithInvalidPhoneNumbers_Returns400" computerName="TUTU" duration="00:00:00.0197975" startTime="2026-02-05T11:14:51.5958319-03:00" endTime="2026-02-05T11:14:51.5958321-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4252670a-a4c1-4596-9203-60efdd46e18c">
+      <Output>
+        <StdOut>TEST: CreateEmployee_WithInvalidPhoneNumbers_Returns400&#xD;
+EXPECTS: Return 400 BadRequest when phones contain zero or negative values&#xD;
+Helper: LoginAndGetToken → login válido y extracción del JWT</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eb3f2d7f-5c40-432c-8898-e72f49e9d446" testId="34c9e93a-7ace-85f5-d614-533ae235ec44" testName="EmployeeService.Tests.ApiTests.GetEmployees_WithoutToken_Returns401" computerName="TUTU" duration="00:00:00.0030217" startTime="2026-02-05T11:14:51.6577542-03:00" endTime="2026-02-05T11:14:51.6577542-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb3f2d7f-5c40-432c-8898-e72f49e9d446">
+      <Output>
+        <StdOut>TEST: GetEmployees_WithoutToken_Returns401&#xD;
+EXPECTS: Return 401 when no JWT is provided</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="320b9dc7-8c9c-4994-99f0-1ad539db7db2" testId="c09802f0-1d15-3991-8775-c97e0c137e89" testName="EmployeeService.Tests.ApiTests.CreateEmployee_ManagerEqualsSelf_Returns400" computerName="TUTU" duration="00:00:01.1503721" startTime="2026-02-05T11:14:51.5237879-03:00" endTime="2026-02-05T11:14:51.5237999-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="320b9dc7-8c9c-4994-99f0-1ad539db7db2">
+      <Output>
+        <StdOut>TEST: CreateEmployee_ManagerEqualsSelf_Returns400&#xD;
+EXPECTS: Manager cannot be the same employee&#xD;
+Helper: LoginAndGetToken → login válido y extracción del JWT</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="EmployeeService.Tests.ApiTests.CreateEmployee_Minor_Returns400" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="44b13f1c-fcb0-16ed-2e2c-b7896352cecb">
+      <Execution id="2edd097d-0643-4177-9fb6-5ccb00cc9ef8" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="CreateEmployee_Minor_Returns400" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.Login_WithInvalidCredentials_Returns401" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="9bb9451a-c07e-3946-8057-9c42bd8c9126">
+      <Execution id="a71cad94-096a-47ef-9e2b-39d557b7b3cd" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="Login_WithInvalidCredentials_Returns401" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.CreateEmployee_ManagerEqualsSelf_Returns400" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="c09802f0-1d15-3991-8775-c97e0c137e89">
+      <Execution id="320b9dc7-8c9c-4994-99f0-1ad539db7db2" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="CreateEmployee_ManagerEqualsSelf_Returns400" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.GetEmployees_WithoutToken_Returns401" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="34c9e93a-7ace-85f5-d614-533ae235ec44">
+      <Execution id="eb3f2d7f-5c40-432c-8898-e72f49e9d446" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="GetEmployees_WithoutToken_Returns401" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.CreateEmployee_WithLessThanTwoPhones_Returns400" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="16cfd299-d47f-ee63-f52d-7a0a739b9ec9">
+      <Execution id="0f77665f-e163-46c0-95f1-a6cdfe7803b6" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="CreateEmployee_WithLessThanTwoPhones_Returns400" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.CreateEmployee_ManagerHasLowerRole_Returns400" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="d06e04af-945b-d916-0001-d18738111de5">
+      <Execution id="6604fb96-b58a-414e-a68e-d962515998e0" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="CreateEmployee_ManagerHasLowerRole_Returns400" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.CreateEmployee_WithInvalidPhoneNumbers_Returns400" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="3b0cbbf9-e50e-f93d-9d6f-c1ba1677e3c3">
+      <Execution id="4252670a-a4c1-4596-9203-60efdd46e18c" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="CreateEmployee_WithInvalidPhoneNumbers_Returns400" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.Login_WithValidCredentials_ReturnsToken" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="1181108a-9116-a0c3-85c8-5e1cc3b79e59">
+      <Execution id="901bdec5-e506-4fc4-b20d-59bd4296e954" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="Login_WithValidCredentials_ReturnsToken" />
+    </UnitTest>
+    <UnitTest name="EmployeeService.Tests.ApiTests.CreateEmployee_DuplicateEmail_Returns409" storage="c:\users\wendy\source\repos\employee-tech-challenge\employeeservice.tests\bin\debug\net8.0\employeeservice.tests.dll" id="047b2988-374d-6ff3-3c85-556330044d3d">
+      <Execution id="7aa6e401-be0d-416b-81b0-e5cc33388b8f" />
+      <TestMethod codeBase="C:\Users\wendy\source\repos\employee-tech-challenge\EmployeeService.Tests\bin\Debug\net8.0\EmployeeService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="EmployeeService.Tests.ApiTests" name="CreateEmployee_DuplicateEmail_Returns409" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="1181108a-9116-a0c3-85c8-5e1cc3b79e59" executionId="901bdec5-e506-4fc4-b20d-59bd4296e954" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="44b13f1c-fcb0-16ed-2e2c-b7896352cecb" executionId="2edd097d-0643-4177-9fb6-5ccb00cc9ef8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16cfd299-d47f-ee63-f52d-7a0a739b9ec9" executionId="0f77665f-e163-46c0-95f1-a6cdfe7803b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="047b2988-374d-6ff3-3c85-556330044d3d" executionId="7aa6e401-be0d-416b-81b0-e5cc33388b8f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d06e04af-945b-d916-0001-d18738111de5" executionId="6604fb96-b58a-414e-a68e-d962515998e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9bb9451a-c07e-3946-8057-9c42bd8c9126" executionId="a71cad94-096a-47ef-9e2b-39d557b7b3cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3b0cbbf9-e50e-f93d-9d6f-c1ba1677e3c3" executionId="4252670a-a4c1-4596-9203-60efdd46e18c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="34c9e93a-7ace-85f5-d614-533ae235ec44" executionId="eb3f2d7f-5c40-432c-8898-e72f49e9d446" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c09802f0-1d15-3991-8775-c97e0c137e89" executionId="320b9dc7-8c9c-4994-99f0-1ad539db7db2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.23)&#xD;
+[xUnit.net 00:00:00.06]   Discovering: EmployeeService.Tests&#xD;
+[xUnit.net 00:00:00.09]   Discovered:  EmployeeService.Tests&#xD;
+[xUnit.net 00:00:00.09]   Starting:    EmployeeService.Tests&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (33ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login success doc=1001 role=Director&#xD;
+     Warning:&#xD;
+     The component "Fluent Assertions" is governed by the rules defined in the Xceed License Agreement and&#xD;
+     the Xceed Fluent Assertions Community License. You may use Fluent Assertions free of charge for&#xD;
+     non-commercial use only. An active subscription is required to use Fluent Assertions for commercial use.&#xD;
+     Please contact Xceed Sales mailto:sales@xceed.com to acquire a subscription at a very low cost.&#xD;
+     A paid commercial license supports the development and continued increasing support of&#xD;
+     Fluent Assertions users under both commercial and community licenses. Help us&#xD;
+     keep Fluent Assertions at the forefront of unit testing.&#xD;
+     For more information, visit https://xceed.com/products/unit-testing/fluent-assertions/&#xD;
+info: EmployeeService.Api.Controllers.EmployeesController[0]&#xD;
+      Create employee requested by doc=1&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (4ms) [Parameters=[@__dto_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[DocumentNumber] = @__dto_DocumentNumber_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (2ms) [Parameters=[@__dto_Email_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[Email] = @__dto_Email_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (3ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login success doc=1001 role=Director&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login success doc=1001 role=Director&#xD;
+info: EmployeeService.Api.Controllers.EmployeesController[0]&#xD;
+      Create employee requested by doc=1&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (2ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login success doc=1001 role=Director&#xD;
+info: EmployeeService.Api.Controllers.EmployeesController[0]&#xD;
+      Create employee requested by doc=1&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login success doc=1001 role=Director&#xD;
+info: EmployeeService.Api.Controllers.EmployeesController[0]&#xD;
+      Create employee requested by doc=1&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (2ms) [Parameters=[@__dto_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[DocumentNumber] = @__dto_DocumentNumber_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: EmployeeService.Api.Controllers.EmployeesController[0]&#xD;
+      Create employee requested by doc=1&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__dto_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[DocumentNumber] = @__dto_DocumentNumber_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__dto_Email_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[Email] = @__dto_Email_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login success doc=1001 role=Director&#xD;
+info: EmployeeService.Api.Controllers.EmployeesController[0]&#xD;
+      Create employee requested by doc=1&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__dto_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[DocumentNumber] = @__dto_DocumentNumber_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: EmployeeService.Api.Controllers.EmployeesController[0]&#xD;
+      Create employee requested by doc=1&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__dto_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[DocumentNumber] = @__dto_DocumentNumber_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__dto_Email_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT CASE&#xD;
+          WHEN EXISTS (&#xD;
+              SELECT 1&#xD;
+              FROM [Employees] AS [e]&#xD;
+              WHERE [e].[Email] = @__dto_Email_0) THEN CAST(1 AS bit)&#xD;
+          ELSE CAST(0 AS bit)&#xD;
+      END&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (2ms) [Parameters=[@__dto_ManagerDocumentNumber_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__dto_ManagerDocumentNumber_Value_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (1ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login attempt doc=1001&#xD;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]&#xD;
+      Executed DbCommand (2ms) [Parameters=[@__request_DocumentNumber_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']&#xD;
+      SELECT TOP(1) [e].[Id], [e].[BirthDate], [e].[DocumentNumber], [e].[Email], [e].[FirstName], [e].[Gender], [e].[LastName], [e].[ManagerId], [e].[Password], [e].[Role]&#xD;
+      FROM [Employees] AS [e]&#xD;
+      WHERE [e].[DocumentNumber] = @__request_DocumentNumber_0&#xD;
+info: EmployeeService.Api.Controllers.AuthController[0]&#xD;
+      Login success doc=1001 role=Director&#xD;
+[xUnit.net 00:00:01.46]   Finished:    EmployeeService.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
