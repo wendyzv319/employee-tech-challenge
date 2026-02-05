@@ -32,12 +32,14 @@ Features included:
 
 ## Project Structure
 
+```text
 employee-tech-challenge/
-├── EmployeeService.Api/          # .NET 8 Web API
-├── EmployeeService.Tests/        # Unit & integration tests
-├── employees-ui/                 # React frontend (Vite)
+├── EmployeeService.Api/        # .NET 8 Web API
+├── EmployeeService.Tests/      # Unit & integration tests
+├── employees-ui/               # React frontend (Vite)
 ├── docker-compose.yml
 └── README.md
+```
 
 ## Run with Docker (Recommended)
 
@@ -72,8 +74,9 @@ The API returns a JWT token.
 
 Send the token in requests using the header:
 
+```http
 Authorization: Bearer <token>
-
+```
 
 All Employees CRUD endpoints require authentication.
 
