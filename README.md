@@ -147,6 +147,10 @@ dotnet test
 - Database data is persisted using Docker volumes
 - The API depends on the DB container with health checks
 
+## Logging
+
+The application uses ASP.NET Core built-in logging via ILogger.
+
 ## Final Notes
 
 This project demonstrates:
