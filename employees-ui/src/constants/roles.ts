@@ -1,12 +1,12 @@
 export const ROLES = {
   EMPLOYEE: 1,
-  MANAGER: 2,
+  LEADER: 2,
   ADMIN: 3,
 } as const;
 
 export const ROLE_LABELS: Record<number, string> = {
   1: "Employee",
-  2: "Manager",
+  2: "Leader",
   3: "Admin",
 };
 

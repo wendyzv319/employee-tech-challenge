@@ -137,6 +137,7 @@ http://localhost:5173
 Run all backend tests from the repository root:
 
 ```bash
+cd EmployeeService.Tests
 dotnet test
 ```
 

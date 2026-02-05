@@ -31,7 +31,7 @@ public class ApiTests : IClassFixture<CustomWebApplicationFactory>
         LogTest(nameof(Login_WithValidCredentials_ReturnsToken),
             "Return 200 OK and valid JWT");
 
-        var body = new { documentNumber = 1001, password = "Ana@123456" };
+        var body = new { documentNumber = 1000, password = "Admin@123456" };
 
         var res = await _client.PostAsJsonAsync("/api/Auth/login", body);
 
@@ -47,7 +47,7 @@ public class ApiTests : IClassFixture<CustomWebApplicationFactory>
         LogTest(nameof(Login_WithInvalidCredentials_Returns401),
             "Return 401 if wrong password");
 
-        var body = new { documentNumber = 1001, password = "wrong" };
+        var body = new { documentNumber = 1000, password = "wrong" };
 
         var res = await _client.PostAsJsonAsync("/api/Auth/login", body);
 
@@ -136,7 +136,7 @@ public class ApiTests : IClassFixture<CustomWebApplicationFactory>
     {
         _output.WriteLine("Helper: LoginAndGetToken → login válido y extracción del JWT");
 
-        var body = new { documentNumber = 1001, password = "Ana@123456" };
+        var body = new { documentNumber = 1000, password = "Admin@123456" };
 
         var res = await _client.PostAsJsonAsync("/api/Auth/login", body);
         res.EnsureSuccessStatusCode();
