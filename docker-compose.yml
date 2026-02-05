@@ -1,0 +1,43 @@
+services:
+  employees_sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: employees_sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Passwordchallenge720"
+    ports:
+      - "1433:1433"
+    volumes:
+      - employees_sql_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P $$MSSQL_SA_PASSWORD -C -Q \"SELECT 1\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  employees_api:
+    build:
+      context: .
+      dockerfile: EmployeeService.Api/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      employees_sqlserver:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__DefaultConnection: "Server=employees_sqlserver,1433;Database=EmployeesDb;User Id=sa;Password=Passwordchallenge720;TrustServerCertificate=True;"
+
+  employees_ui:
+    build:
+      context: ./employees-ui
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - employees_api
+
+volumes:
+  employees_sql_data:
