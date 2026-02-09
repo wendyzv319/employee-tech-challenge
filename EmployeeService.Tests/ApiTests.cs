@@ -230,9 +230,9 @@ public class ApiTests : IClassFixture<CustomWebApplicationFactory>
         res.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 
         var msg = await res.Content.ReadAsStringAsync();
-        msg.Should().Contain("validation errors occurred")
-           .And.Contain("Phones")
-           .And.Contain("minimum length of '2'");
+        msg.Should().Contain("One or more validation errors occurred")
+            .And.Contain("\"Phones\"")
+            .And.Contain("minimum length of '2'");
     }
 
 
@@ -320,6 +320,71 @@ public class ApiTests : IClassFixture<CustomWebApplicationFactory>
 
         var msg = await res.Content.ReadAsStringAsync();
         msg.Should().Contain("Email already exists");
+    }
+
+    [Fact]
+    public async Task UpdateEmployee_ValidPayload_Returns200_AndUpdatesData()
+    {
+        LogTest(nameof(UpdateEmployee_ValidPayload_Returns200_AndUpdatesData),
+            "Return 200 OK and update employee fields using PUT /api/Employees with documentNumber in body");
+
+        // Arrange
+        var token = await LoginAndGetToken();
+        _client.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", token);
+
+        var doc = 5101;
+        
+        var createBody = new
+        {
+            documentNumber = doc,
+            firstName = "Before",
+            lastName = "Update",
+            email = "before.update.5101@test.com",
+            birthDate = DateTime.UtcNow.AddYears(-30).ToString("yyyy-MM-ddTHH:mm:ss"),
+            gender = 1,
+            role = 1,
+            managerDocumentNumber = (int?)null,
+            phones = new[] { 11911111111L, 11822222222L },
+            password = "Before@123"
+        };
+
+        var createRes = await _client.PostAsJsonAsync("/api/Employees", createBody);
+        createRes.StatusCode.Should().BeOneOf(HttpStatusCode.Created, HttpStatusCode.Conflict);
+        
+        var updateBody = new
+        {
+            documentNumber = doc,
+            firstName = "After",
+            lastName = "Updated",
+            email = "after.updated.5101@test.com",
+            birthDate = DateTime.UtcNow.AddYears(-30).ToString("yyyy-MM-ddTHH:mm:ss"),
+            gender = 1,
+            role = 1,
+            managerDocumentNumber = (int?)null,
+            phones = new[] { 11933333333L, 11844444444L },
+            password = (string?)null
+        };
+
+        // Act
+        var updateRes = await _client.PutAsJsonAsync("/api/Employees", updateBody);
+       
+        updateRes.StatusCode.Should().Be(HttpStatusCode.OK);
+
+        var updatedJson = await updateRes.Content.ReadAsStringAsync();
+        updatedJson.Should().Contain("\"documentNumber\":" + doc);
+        updatedJson.Should().Contain("After");
+        updatedJson.Should().Contain("Updated");
+        updatedJson.Should().Contain("after.updated.5101@test.com");
+
+        // Optional: confirm by GET
+        var getRes = await _client.GetAsync($"/api/Employees/{doc}");
+        getRes.StatusCode.Should().Be(HttpStatusCode.OK);
+
+        var getJson = await getRes.Content.ReadAsStringAsync();
+        getJson.Should().Contain("After")
+               .And.Contain("Updated")
+               .And.Contain("after.updated.5101@test.com");
     }
 
 

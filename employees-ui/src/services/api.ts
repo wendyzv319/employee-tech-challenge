@@ -76,9 +76,8 @@ export const api = {
             body: JSON.stringify(dto),
         }),
 
-
-    updateEmployee: (documentNumber: EmployeeKey, dto: UpdateEmployeeDto) =>
-        request<Employee>(`/api/Employees/${documentNumber}`, {
+    updateEmployee: (dto: UpdateEmployeeDto) =>
+        request<Employee>(`/api/Employees`, {
             method: "PUT",
             body: JSON.stringify(dto),
         }),

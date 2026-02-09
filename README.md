@@ -63,7 +63,7 @@ On the **first start**, the system automatically seeds an initial **Director** u
 
 ### Credentials
 - **DocumentNumber:** 1000
-- **Password:** 12345678
+- **Password:** Admin@123456
 - **Role:** Director
 
 Use this user to log in and create other employees.

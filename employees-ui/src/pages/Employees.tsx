@@ -70,7 +70,7 @@ export default function Employees({ onLogout }: { onLogout: () => void }) {
                 await api.createEmployee(payload);
                 setToast({ message: "Employee created successfully", type: "success" });
             } else if (selected) {
-                await api.updateEmployee(selected.documentNumber, payload);
+                await api.updateEmployee(payload);
                 setToast({ message: "Employee updated successfully", type: "success" });
             }
 

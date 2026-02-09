@@ -5,6 +5,10 @@ namespace EmployeeService.Api.Dtos;
 
 public class UpdateEmployeeDto
 {
+    [Required]
+    [Range(1, int.MaxValue)]
+    public int DocumentNumber { get; set; }
+
     [Required, MinLength(1)]
     public string FirstName { get; set; } = string.Empty;
 
@@ -25,6 +29,6 @@ public class UpdateEmployeeDto
 
     [Required, MinLength(2)]
     public List<long> Phones { get; set; } = new();
-   
+
     public string? Password { get; set; }
 }

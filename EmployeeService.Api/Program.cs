@@ -1,12 +1,13 @@
 using EmployeeService.Api.Auth;
 using EmployeeService.Api.Data;
+using EmployeeService.Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.IO;
 using System.Reflection;
 using System.Text;
-using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Auth services
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<JwtTokenService>();
+builder.Services.AddScoped<EmployeesService>();
+builder.Services.AddScoped<AuthService>();
+
 
 // JWT Auth
 var jwtSection = builder.Configuration.GetSection("Jwt");
